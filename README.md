@@ -1,8 +1,8 @@
-# React + Vite
+# Mail-In Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## First Commit/Branch
 
-Currently, two official plugins are available:
+Overview: This branch controls the base setup of the Mailin Application. it mostly takes care of the Front-End layout. The layout consists of controling the
+routes and displaying the avialbe mail in the best fast way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Video Review: [Video Link](https://pdx.zoom.us/rec/share/9vAKcSScc_Ow4CGVo79UWcsNe9xXhvdWovQq3VZh3sil3ZMetMt6oeWeh0SW2LYh.4ysknnmdq9TyIF1j?startTime=1740446815000)
