@@ -1,0 +1,14 @@
+.Body {
+  background-color: #c7ccff;
+}
+.Head {
+  background-color: #46707d;
+  height: 40px;
+}
+.Side {
+  width: 200px;
+  margin: 5px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  background-color: #52678a;
+}
