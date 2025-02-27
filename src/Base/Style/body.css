@@ -1,4 +1,7 @@
 .Body {
+  color: #131313;
+}
+.Body {
   background-color: #c7ccff;
 }
 .Head {
@@ -11,4 +14,27 @@
   margin-left: 2px;
   margin-bottom: 2px;
   background-color: #52678a;
+}
+.Bar {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  width: 90%;
+  margin-left: 5%;
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.Bar .Small {
+  width: 0px;
+  height: 0px;
+}
+.Bar > div {
+  text-align: center;
+  position: sticky;
+  top: 0px;
+}
+.Bar:hover {
+  background: #291919;
+  color: #f6f6f6;
 }

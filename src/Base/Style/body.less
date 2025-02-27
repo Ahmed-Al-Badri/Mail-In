@@ -1,3 +1,4 @@
+@import "../../Style/Style.less";
 .Body {
   background-color: rgb(199, 204, 255);
 }
@@ -13,4 +14,32 @@
   margin-left: 2px;
   margin-bottom: 2px;
   background-color: rgb(82, 103, 138);
+}
+
+.Bar {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  width: 90%;
+  margin-left: 5%;
+  position: relative;
+  background: @GivenBack;
+  //borders
+  border-radius: 20px;
+}
+
+.Bar .Small {
+  width: 0px;
+  height: 0px;
+}
+
+.Bar > div > {
+  text-align: center;
+  position: sticky;
+  top: 0px;
+}
+
+.Bar:hover {
+  background: @fGivenBack;
+  color: @fTextColor;
 }

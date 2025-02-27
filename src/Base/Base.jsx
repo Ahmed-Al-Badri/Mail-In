@@ -33,8 +33,10 @@ class Side extends BaseShow {
                 Navigate.move_to(type);
               }}
             >
-              {" "}
-              {type}
+              <div>
+                {" "}
+                <p>{type}</p>{" "}
+              </div>
             </div>
           );
         })}
