@@ -3,13 +3,14 @@ import { InnerShow } from "../Format/Format";
 import Teps from "./Teps/Teps";
 import "./Style/body.css";
 import Navigate from "../Format/Navigation/Navigation";
+import Mail from "./Mail/Mail";
 class Head extends InnerShow {
   constructor(probs) {
     super(probs);
   }
 
   do_render() {
-    let hold = <></>;
+    let hold = <>The head</>;
 
     return [hold, "Head", {}];
   }
@@ -33,9 +34,8 @@ class Side extends BaseShow {
                 Navigate.move_to(type);
               }}
             >
-              <div>
-                {" "}
-                <p>{type}</p>{" "}
+              <div className="Small">
+                <div className="BarName BottomLine">{type}</div>
               </div>
             </div>
           );
@@ -55,10 +55,11 @@ class Body extends InnerShow {
     let hold = (
       <>
         <Side />
-        <Teps hrefs="/" Sharp={true} Tep={Bars[0]} />
+        <Teps hrefs="" href="" Sharp={true} Tep={Bars[0]} />
         {Bars.map((res, val) => {
           return <Teps href={res} Tep={res} key={val} />;
         })}
+        <Mail hrefs="" href="Type" />
       </>
     );
 

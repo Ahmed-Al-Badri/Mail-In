@@ -1,6 +1,6 @@
 @import "../../Style/Style.less";
 .Body {
-  background-color: rgb(199, 204, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .Head {
@@ -9,37 +9,216 @@
 }
 
 .Side {
-  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
   margin: 5px;
   margin-left: 2px;
   margin-bottom: 2px;
-  background-color: rgb(82, 103, 138);
+  background-color: transparent;
+  border-right: 5px solid rgb(196, 196, 196);
+  border-top-right-radius: 20px;
+}
+
+.BarShadow {
+  box-shadow: 2px 2px 2px grey;
 }
 
 .Bar {
+  //.BarShadow;
   margin-top: 5px;
   margin-bottom: 5px;
   display: block;
   width: 90%;
-  margin-left: 5%;
+  height: 30px;
   position: relative;
   background: @GivenBack;
   //borders
   border-radius: 20px;
+  //border-right: 1px solid black;
 }
 
-.Bar .Small {
-  width: 0px;
-  height: 0px;
-}
-
-.Bar > div > {
-  text-align: center;
-  position: sticky;
-  top: 0px;
+.BarName {
+  position: absolute;
+  height: 90%;
+  top: 5%;
+  left: 10px;
+  width: 80%;
+  font-size: 1.5em;
 }
 
 .Bar:hover {
   background: @fGivenBack;
   color: @fTextColor;
+}
+
+.Teps {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.Teps > div {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+} //correct for now
+
+.Teps > div > div {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+} //this sets the mails content
+
+.MailShadow {
+  box-shadow: 2px 2px 1px grey;
+}
+
+.Mails {
+  //.MailShadow;
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  height: 90%;
+  width: 98%;
+  background-color: aliceblue;
+  background-color: transparent;
+  //border: 1px solid rgb(220, 220, 220);
+}
+
+.Mails:hover {
+  .MailShadow;
+  box-shadow: 2px 2px 1px rgb(91, 91, 91);
+}
+
+.Mails:not(:hover) .FunRuns {
+  display: none;
+}
+
+.Mails:not(:hover) .Title {
+  //width: 75%;
+}
+
+.Mails:not(:hover) .Small_Note {
+  width: 75%;
+}
+
+.Content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.FunRuns {
+  width: 0px;
+  height: 0px;
+}
+
+.Elements {
+  position: absolute;
+  width: 5%;
+  height: 90%;
+  border-radius: 30px;
+  overflow: hidden;
+  top: 5%;
+  border: 1px solid @fGivenBack;
+  background-color: @GivenBack;
+}
+
+.Elements:not(:active):hover {
+  background-color: red;
+  z-index: 3;
+  height: 95%;
+  top: 2.5%;
+  //overflow: visible;
+  background-color: @fGivenBack;
+  border-color: @SecondColor;
+  color: @fTextColor;
+}
+
+.Elements > div {
+  position: relative;
+}
+
+.Elements > div > {
+  top: 25%;
+  font-size: 100%;
+  left: 25%;
+}
+
+.Title {
+  position: absolute;
+  width: calc(100% - (145px * 2));
+  height: auto;
+  overflow: hidden;
+  font-size: 0.9em;
+  top: 25%;
+  left: 135px;
+}
+
+.Small_Note {
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  font-size: 0.85em;
+  left: 20%;
+  bottom: 10%;
+}
+
+.Title > .Small {
+  display: inline;
+  font-weight: lighter;
+  color: rgb(132, 132, 132);
+}
+
+.From {
+  .Title;
+  position: absolute;
+  width: 125px;
+  left: 1%;
+}
+
+.Mails:hover .From,
+.Mails:hover .Date,
+.Mails:hover .has_been {
+  font-weight: bolder;
+}
+
+.Mails:hover .Date {
+  display: none;
+}
+
+.Date {
+  .From;
+  left: unset;
+  //right: 1%;
+  right: 1%;
+}
+
+.has_been {
+  .From;
+  width: 20%;
+  top: 65%;
+  font-size: 0.85em;
+  display: none;
+}
+
+.Text_Words {
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} /** Used https://ishadeed.com/article/css-short-long-content/ for the text-overflow ellipsis*/
+
+.BottomLine {
+  position: absolute;
+  width: 95%;
+  height: 100%;
+  left: 2.5%;
+  border-bottom: 1px solid rgba(137, 137, 137, 0.564);
+}
+
+@media only screen and (min-width: 1800px) {
 }
