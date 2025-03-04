@@ -1,6 +1,7 @@
 import { BaseShow } from "../../Format/Format";
 import React from "react";
-
+import Navigate from "../../Format/Navigation/Navigation";
+const typs = ["Read", "Unread", "Spam", "Delete"];
 class Teps extends BaseShow {
   constructor(probs) {
     super(probs);
@@ -33,7 +34,7 @@ class Teps extends BaseShow {
     let starts = [];
     let widths = 300;
     let screen = window.outerHeight;
-    let display = Math.floor(screen / 50) + 2;
+    let display = Math.floor(screen / 35) + 2;
     if (this.state.ref.current) {
       let windows = window.scrollY;
       widths = this.state.ref.current.clientWidth;
@@ -49,7 +50,7 @@ class Teps extends BaseShow {
         points = Math.floor(points);
       }
 
-      let curs = points / 50;
+      let curs = points / 35;
       curs = Math.floor(curs);
       //console.log("the points " + points);
 
@@ -70,15 +71,50 @@ class Teps extends BaseShow {
             {starts.map((res, info) => {
               return (
                 <div
-                  key={`${res * 50}`}
+                  key={`${res * 35}`}
                   style={{
-                    top: res * 50,
+                    top: res * 35,
                     position: "absolute",
-                    height: "50px",
-                    width: 400,
+                    height: "35px",
+                  }}
+                  onClick={() => {
+                    Navigate.move_to("Type", `${100 - info}${this.href || ""}`);
                   }}
                 >
-                  <div key={res}> {this.data[res] + " for " + this.href} </div>
+                  <div>
+                    <div className={`Mails`} key={res}>
+                      <div className="Content">
+                        <div className="BottomLine" />
+                        <div className="Title Text_Words">
+                          {`${this.data[res]} for ${this.href}`}
+                          <div className="Small Text_Words">
+                            {" "}
+                            - Small notes
+                            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                          </div>
+                        </div>
+
+                        <div className="From">This is from</div>
+                        <div className="Date">12:12:12 12:12 AM</div>
+                        <div className="has_been">One day ago</div>
+                        <div className="FunRuns">
+                          {typs.map((res, val) => {
+                            return (
+                              <div
+                                key={val}
+                                style={{
+                                  right: `${1 + val * 4}%`,
+                                }}
+                                className="Elements"
+                              >
+                                <div>{res}</div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })}
@@ -93,7 +129,7 @@ class Teps extends BaseShow {
       hold,
       "Teps",
       { ref: this.state.ref },
-      { height: (this.data.length || 1) * 50, position: "relative" },
+      { height: (this.data.length || 1) * 35, position: "relative" },
     ];
   }
 }

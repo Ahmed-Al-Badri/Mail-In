@@ -26,12 +26,16 @@ class Format extends Component {
       this.href = probs.href;
     }
     this.Sharp = probs.Sharp || false;
+    console.log("is the given " + probs.Sharp);
     this.active = false;
     if (this.href != undefined) {
       this.state.active = this.onpath(
         window.location.pathname.replace("/", ""),
         true
       );
+    }
+    if (this.href == undefined && this.Sharp) {
+      this.href = "";
     }
   }
 
@@ -46,7 +50,7 @@ class Format extends Component {
         Classname: get_class_css(this.type),
       });
     });
-    if (this.href != undefined) {
+    if (this.href != undefined || this.Sharp == true) {
       this.nav = Navigate.append((probs) => {
         //console.log(probs + " is the amount");
         this.onpath(probs);
@@ -60,6 +64,16 @@ class Format extends Component {
     let hold = false;
     //console.log(probs + " is the probs");
     //console.log(this.href + " is the cur");
+    console.log("probs");
+    if (this.Sharp) {
+      console.log(
+        "the wanted is probs :" +
+          probs +
+          ": and the given is:" +
+          this.href +
+          ":"
+      );
+    }
     if (this.Sharp == true && probs == this.href) {
       hold = true;
     }
