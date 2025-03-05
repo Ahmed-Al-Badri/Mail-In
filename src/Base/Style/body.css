@@ -1,14 +1,204 @@
 .Body {
-  background-color: #c7ccff;
+  color: #131313;
+}
+.Body {
+  background-color: #ffffff;
 }
 .Head {
   background-color: #46707d;
   height: 40px;
 }
 .Side {
-  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
   margin: 5px;
   margin-left: 2px;
   margin-bottom: 2px;
-  background-color: #52678a;
+  background-color: transparent;
+  border-right: 5px solid #c4c4c4;
+  border-top-right-radius: 20px;
+}
+.BarShadow {
+  box-shadow: 2px 2px 2px grey;
+}
+.Bar {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  width: 90%;
+  height: 30px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.BarName {
+  position: absolute;
+  height: 90%;
+  top: 5%;
+  left: 10px;
+  width: 80%;
+  font-size: 1.5em;
+}
+.Bar:hover {
+  background: #291919;
+  color: #f6f6f6;
+}
+.Teps {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+}
+.Teps > div {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+}
+.Teps > div > div {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.MailShadow {
+  box-shadow: 2px 2px 1px grey;
+}
+.Mails {
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  height: 90%;
+  width: 98%;
+  background-color: aliceblue;
+  background-color: transparent;
+}
+.Mails:hover {
+  box-shadow: 2px 2px 1px grey;
+  box-shadow: 2px 2px 1px #5b5b5b;
+}
+.Mails:not(:hover) .FunRuns {
+  display: none;
+}
+.Mails:not(:hover) .Small_Note {
+  width: 75%;
+}
+.Content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.FunRuns {
+  width: 0px;
+  height: 0px;
+}
+.Elements {
+  position: absolute;
+  width: 5%;
+  height: 90%;
+  border-radius: 30px;
+  overflow: hidden;
+  top: 5%;
+  border: 1px solid #291919;
+  background-color: #ffffff;
+}
+.Elements:not(:active):hover {
+  background-color: red;
+  z-index: 3;
+  height: 95%;
+  top: 2.5%;
+  background-color: #291919;
+  border-color: #cdbf74;
+  color: #f6f6f6;
+}
+.Elements > div {
+  position: relative;
+}
+.Elements > div {
+  top: 25%;
+  font-size: 100%;
+  left: 25%;
+}
+.Title {
+  position: absolute;
+  width: calc(100% - (145px * 2));
+  height: auto;
+  overflow: hidden;
+  font-size: 0.9em;
+  top: 25%;
+  left: 135px;
+}
+.Small_Note {
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  font-size: 0.85em;
+  left: 20%;
+  bottom: 10%;
+}
+.Title > .Small {
+  display: inline;
+  font-weight: lighter;
+  color: #848484;
+}
+.From {
+  width: calc(100% - (145px * 2));
+  height: auto;
+  overflow: hidden;
+  font-size: 0.9em;
+  top: 25%;
+  left: 135px;
+  position: absolute;
+  width: 125px;
+  left: 1%;
+}
+.Mails:hover .From,
+.Mails:hover .Date,
+.Mails:hover .has_been {
+  font-weight: bolder;
+}
+.Mails:hover .Date {
+  display: none;
+}
+.Date {
+  width: calc(100% - (145px * 2));
+  height: auto;
+  overflow: hidden;
+  font-size: 0.9em;
+  top: 25%;
+  left: 135px;
+  position: absolute;
+  width: 125px;
+  left: 1%;
+  left: unset;
+  right: 1%;
+}
+.has_been {
+  width: calc(100% - (145px * 2));
+  height: auto;
+  overflow: hidden;
+  font-size: 0.9em;
+  top: 25%;
+  left: 135px;
+  position: absolute;
+  width: 125px;
+  left: 1%;
+  width: 20%;
+  top: 65%;
+  font-size: 0.85em;
+  display: none;
+}
+.Text_Words {
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/** Used https://ishadeed.com/article/css-short-long-content/ for the text-overflow ellipsis*/
+.BottomLine {
+  position: absolute;
+  width: 95%;
+  height: 100%;
+  left: 2.5%;
+  border-bottom: 1px solid rgba(137, 137, 137, 0.564);
 }
