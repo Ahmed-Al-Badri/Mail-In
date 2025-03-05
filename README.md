@@ -14,3 +14,5 @@ Video Pull Request Review: [Video Link](https://pdx.zoom.us/rec/share/AXsbnTMd4D
 Overview: this branch focues on the creation of the Front-Web elements, that includes the Bars for the navigation and the mail contents, it does not current view login in information, and it also does not connect to a server. It focus is it implemnt the main components before the major steps for the combination of both the backend and frontend happen.
 
 Video Review: [Video Link](https://pdx.zoom.us/rec/share/wLWDArIbcKKiGKiBdfRMTLZvMZPFSX6UzQRN2nJH_Vr04O59q7c_3jzCBRGLX7H-.pVa_rjWqchCzHUK4?startTime=1741047614000).
+
+Video Pull Request Review: [VIdeo Link](https://pdx.zoom.us/rec/share/jQfbVPyUwfgeSyYefUZgSJwumZVvg0MqaIfosfsp2-j3010tCZqj81oulKMVECdM.hu1CgQhuU5KCyH4O?startTime=1741132860000)
