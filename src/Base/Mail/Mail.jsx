@@ -12,6 +12,9 @@ class Mail extends InnerShow {
       found: null,
       mail_id: window.location.pathname.split("/")[2],
     };
+    this.info = [];
+    this.updated = [];
+    this.size = 0;
   }
 
   do_mount() {
@@ -49,8 +52,15 @@ class Mail extends InnerShow {
     if (loaded) {
       if (found && mail) {
         console.log(mail.content.content.replace(/\n/g, <br />));
-        let info = mail.content.content.split(/\n/g);
-
+        this.info = mail.content.content.split(/\n/g);
+        this.size = this.info.length - 1;
+        this.updated = [];
+        this.updated.push(this.info[0]);
+        for (let i = 0; i < this.size; i++) {
+          this.updated.push(<br />);
+          this.updated.push(this.info[i + 1]);
+        }
+        //{...mail.content.content.replace(/\n/g, "<br />")}
         content = (
           <div className="MailDetails__" key={this.state.mail_id}>
             <div className="TopicString">{`Topic: ${mail.content.topic}`}</div>
@@ -62,7 +72,9 @@ class Mail extends InnerShow {
             </div>
             <div className="MailContent">
               <div className="Content_1">
-                {...mail.content.content.replace(/\n/g, "<br />")}
+                {this.updated.map((res, val) => {
+                  return res;
+                })}
               </div>
             </div>
             <div className="DateString">
