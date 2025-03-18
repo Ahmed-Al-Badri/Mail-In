@@ -1,3 +1,5 @@
-.Body {
-  color: #131313;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

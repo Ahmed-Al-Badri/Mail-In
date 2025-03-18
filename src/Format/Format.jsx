@@ -26,7 +26,7 @@ class Format extends Component {
       this.href = probs.href;
     }
     this.Sharp = probs.Sharp || false;
-    console.log("is the given " + probs.Sharp);
+    //console.log("is the given " + probs.Sharp);
     this.active = false;
     if (this.href != undefined) {
       this.state.active = this.onpath(
@@ -40,8 +40,8 @@ class Format extends Component {
   }
 
   componentDidMount() {
-    //console.log(this.type);
-    //console.log(this.href + " is the href");
+    ////console.log(this.type);
+    ////console.log(this.href + " is the href");
     this.key = Settings_.append(this.type, () => {
       let hold = { ...this.state.style };
       hold.flexDirection = get_flex_direction(this.type);
@@ -52,7 +52,7 @@ class Format extends Component {
     });
     if (this.href != undefined || this.Sharp == true) {
       this.nav = Navigate.append((probs) => {
-        //console.log(probs + " is the amount");
+        ////console.log(probs + " is the amount");
         this.onpath(probs);
       });
     }
@@ -60,28 +60,28 @@ class Format extends Component {
   }
 
   onpath(probs, ig) {
-    console.log("the wanted is " + this.href + " and the aviable is " + probs);
+    //console.log("the wanted is " + this.href + " and the aviable is " + probs);
     let hold = false;
-    //console.log(probs + " is the probs");
-    //console.log(this.href + " is the cur");
-    console.log("probs");
+    ////console.log(probs + " is the probs");
+    ////console.log(this.href + " is the cur");
+    //console.log("probs");
     if (this.Sharp) {
-      console.log(
-        "the wanted is probs :" +
-          probs +
-          ": and the given is:" +
-          this.href +
-          ":"
-      );
+      //console.log(
+      //  "the wanted is probs :" +
+      //    probs +
+      //    ": and the given is:" +
+      //    this.href +
+      //    ":"
+      //);
     }
     if (this.Sharp == true && probs == this.href) {
       hold = true;
     }
     if (this.Sharp == false) {
       if (probs.length >= this.href.length) {
-        //console.log("enter the sum");
+        ////console.log("enter the sum");
         if (probs.length == this.href.length) {
-          //console.log("Enter the system");
+          ////console.log("Enter the system");
           if (probs == this.href) {
             hold = true;
           }
@@ -102,22 +102,30 @@ class Format extends Component {
               hold = false;
             }
           }
-          //console.log("the hold is " + hold);
+          ////console.log("the hold is " + hold);
         }
       }
     }
     if (ig == undefined) {
       if (hold == true && this.state.active == false) {
-        this.setState({ active: true });
+        this.setState({ active: true }, () => {
+          this.onMount_two();
+        });
       } else {
         if (hold == false && this.state.active == true) {
-          this.setState({ active: false });
+          this.setState({ active: false }, () => {
+            this.offMount_two();
+          });
         }
       }
     } else {
       return hold;
     }
   }
+
+  onMount_two() {}
+
+  offMount_two() {}
 
   componentWillUnmount() {
     if (this.key != undefined) {
