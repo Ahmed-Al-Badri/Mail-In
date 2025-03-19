@@ -32,6 +32,14 @@ const Bars = [
 class Side extends BaseShow {
   constructor(probs) {
     super(probs);
+    this.state = { ...this.state, amounts: {} };
+  }
+
+  do_mount() {
+    Setting.amounts_mails = (prob) => {
+      this.setState({ amounts: prob });
+    };
+    Setting.Amount_count();
   }
 
   do_render() {
@@ -46,8 +54,9 @@ class Side extends BaseShow {
                 Navigate.move_to(type);
               }}
             >
-              <div className="Small">
+              <div className="Small BarContent">
                 <div className="BarName">{type}</div>
+                <div className="Amount__">{this.state.amounts[type] || ""}</div>
               </div>
               <div className="BottomLine" />
               <div className="Barline" />

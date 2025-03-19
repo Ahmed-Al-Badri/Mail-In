@@ -108,15 +108,15 @@ body {
 }
 
 .BarName {
-  position: absolute;
-  height: 90%;
-  top: 5%;
   left: 10px;
-  width: 80%;
   font-size: 1.5em;
   cursor: pointer;
+  position: relative;
 }
-
+.Amount__ {
+  padding: 5px;
+  font-family: "Arial Narrow Bold ";
+}
 .Bar:hover {
   background: rgba(0, 0, 0, 0.141);
   //color: @fTextColor;
@@ -304,6 +304,15 @@ body {
 
 .From {
   width: 125px;
+}
+
+.BarContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.BarName {
+  flex-grow: 1;
 }
 
 .Mails:hover .From,

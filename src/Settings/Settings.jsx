@@ -32,6 +32,7 @@ class Settings {
     this.draft_request = () => {};
     this.users = {};
     this.current_mails = [];
+    this.amounts_mails = () => {};
     this.update_for = "temp";
     //this.chats = [];
     this.onusers = [];
@@ -249,9 +250,51 @@ class Settings {
     }
   }
 
+  Amount_count() {
+    const counts = {
+      Inbox: 0,
+      Unread: 0,
+      Archive: 0,
+      Drafts: 0,
+      Sent: 0,
+      Spam: 0,
+      Deleted: 0,
+    };
+
+    this.current_mails.forEach((mail) => {
+      switch (mail.status) {
+        case 0:
+          counts["Drafts"]++;
+          break;
+        case 1:
+          counts["Inbox"]++;
+          counts["Unread"]++;
+          break;
+        case 2:
+          counts["Inbox"]++;
+          break;
+        case 3:
+          counts["Archive"]++;
+          break;
+        case 4:
+          counts["Sent"]++;
+          break;
+        case 5:
+          counts["Spam"]++;
+          break;
+        case 6:
+          counts["Deleted"]++;
+          break;
+        default:
+          break;
+      }
+    });
+    this.amounts_mails(counts);
+  }
+
   format_mails(type) {
     let validStatuses;
-
+    this.Amount_count();
     switch (type) {
       case "Inbox":
         validStatuses = [1, 2];
