@@ -24,15 +24,15 @@ class Mail extends InnerShow {
         found: prob != undefined ? true : false,
         mail: prob,
       });
-      console.log(prob);
+      //console.log(prob);
     };
-    console.log(this.state.mail_id);
+    //console.log(this.state.mail_id);
     Setting.Mail_detail(this.state.mail_id);
   }
 
   onMount_two() {
-    console.log("being actived");
-    console.log("the url is " + this.state.mail_id);
+    //console.log("being actived");
+    //console.log("the url is " + this.state.mail_id);
     this.setState(
       {
         loaded: false,
@@ -40,7 +40,7 @@ class Mail extends InnerShow {
         mail_id: window.location.pathname.split("/")[2],
       },
       () => {
-        console.log("the mail id is now " + this.state.mail_id);
+        //console.log("the mail id is now " + this.state.mail_id);
         Setting.Mail_detail(this.state.mail_id);
       }
     );
@@ -51,7 +51,7 @@ class Mail extends InnerShow {
     let content;
     if (loaded) {
       if (found && mail) {
-        console.log(mail.content.content.replace(/\n/g, <br />));
+        //console.log(mail.content.content.replace(/\n/g, <br />));
         this.info = mail.content.content.split(/\n/g);
         this.size = this.info.length - 1;
         this.updated = [];

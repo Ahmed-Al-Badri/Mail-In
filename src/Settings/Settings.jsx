@@ -58,7 +58,7 @@ class Settings {
       this.reconnectWebSocket(); // Create the WebSocket after login
       this.logged = false;
     }
-    //console.log(prob);
+    ////console.log(prob);
     this.send({ type: "login", args: [prob.username_email, prob.password] });
   }
 
@@ -67,8 +67,8 @@ class Settings {
     sessionStorage.setItem("email", prob.email);
     sessionStorage.setItem("password", prob.password);
     CREATS = prob;
-    //console.log(prob);
-    //console.log("create login");
+    ////console.log(prob);
+    ////console.log("create login");
     if (this.logged) {
       this.reconnectWebSocket(); // Create the WebSocket after account creation
       this.logged = false;
@@ -87,7 +87,7 @@ class Settings {
     this.WebS = new WebSocket(`${prob.style}://${prob.address}:${prob.port}`);
     this.WebS.onopen = () => {
       this.server(true);
-      //console.log("WebSocket connection established.");
+      ////console.log("WebSocket connection established.");
     };
 
     this.WebS.onmessage = (event) => {
@@ -117,49 +117,49 @@ class Settings {
       case "login":
         if (response.status === 1) {
           sessionStorage.setItem("ref", response.response.user.reference);
-          //console.log(response);
+          ////console.log(response);
           this.reference = response.response.user.reference;
-          //console.log("the ref given from the server is " + this.reference);
+          ////console.log("the ref given from the server is " + this.reference);
           this.login(true);
-          //console.log("Login successful.", response.data);
+          ////console.log("Login successful.", response.data);
         } else {
           this.login(false);
-          //console.log("Login failed.", response.response);
+          ////console.log("Login failed.", response.response);
         }
         break;
       case "create_account":
         if (response.status === 1) {
           sessionStorage.setItem("ref", response.response.user.reference);
           this.reference = response.response.user.reference;
-          //console.log(response);
+          ////console.log(response);
           this.login(true);
-          //console.log("Account created successfully.", response.data);
+          ////console.log("Account created successfully.", response.data);
         } else {
           this.login(false);
-          //console.log("Account creation failed.", response.response);
+          ////console.log("Account creation failed.", response.response);
         }
         break;
       case "get_mail":
-        console.log(response);
+        //console.log(response);
         this.get_mail(response.mail);
         break;
       case "all_mails":
-        ////console.log(response);
+        //////console.log(response);
         this.current_mails = response.mails;
         this.users = { ...this.users, ...response.mail_users };
         this.all_mail(response.mails);
-        //console.log(this.users);
-        //console.log("All Mail");
+        ////console.log(this.users);
+        ////console.log("All Mail");
         break;
       case "get_draft":
-        console.log("draft");
-        //console.log(response);
+        //console.log("draft");
+        ////console.log(response);
         this.draft_request(response.draft);
         break;
 
       default:
-        //console.log(response);
-        //console.warn("Unknown response type received.");
+        ////console.log(response);
+        ////console.warn("Unknown response type received.");
         break;
     }
   }
@@ -329,8 +329,8 @@ class Settings {
     const sortedData = filteredData.sort((a, b) =>
       b.date < a.date ? -1 : a.date > b.date ? 1 : 0
     );
-    console.log(sortedData);
-    console.log("info");
+    //console.log(sortedData);
+    //console.log("info");
     return sortedData;
   }
 }

@@ -138,12 +138,12 @@ class Login extends BaseShow {
 
   submit() {
     if (this.state.option === "create") {
-      console.log(
-        "Creating account with:",
-        this.state.email,
-        this.state.username,
-        this.state.password
-      );
+      // console.log(
+      //   "Creating account with:",
+      //   this.state.email,
+      //   this.state.username,
+      //   this.state.password
+      // );
       if (
         this.state.username != "" &&
         this.state.name != "" &&
@@ -164,7 +164,7 @@ class Login extends BaseShow {
           password: this.state.password,
         });
       }
-      console.log("Logging in with:", this.state.username, this.state.password);
+      //console.log("Logging in with:", this.state.username, this.state.password);
     }
   }
 

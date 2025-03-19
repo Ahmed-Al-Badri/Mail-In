@@ -26,7 +26,7 @@ class Draft extends BaseShow {
   do_mount() {
     Setting.draft_request = (prob) => {
       this.draft = prob;
-      console.log(prob);
+      //console.log(prob);
       this.setState({
         draft_loaded: true,
         draft_id: prob.id,
@@ -36,13 +36,13 @@ class Draft extends BaseShow {
         valid_to: prob.data.to,
         data: prob,
       });
-      //console.log(prob);
-      //console.log("is the gotten id " + prob.id);
-      //console.log("The topic is " + prob.data.content.topic);
+      ////console.log(prob);
+      ////console.log("is the gotten id " + prob.id);
+      ////console.log("The topic is " + prob.data.content.topic);
     };
     //this.data = "data";
     //this.state.send_to = this.data;
-    //console.log(this.state.draft_id + " is the wanted id");
+    ////console.log(this.state.draft_id + " is the wanted id");
 
     Setting.Get_Draft(this.state.draft_id);
   }
@@ -58,7 +58,7 @@ class Draft extends BaseShow {
           send_to: this.state.send_to,
         },
       });
-      console.log("the email send was ");
+      //console.log("the email send was ");
     }
 
     let data = (
@@ -88,8 +88,8 @@ class Draft extends BaseShow {
                   <input
                     className="DraftInput SENDER__ "
                     onChange={(prob) => {
-                      console.log(prob.target.value);
-                      console.log(prob.target.value.split(" "));
+                      //console.log(prob.target.value);
+                      //console.log(prob.target.value.split(" "));
                       this.setState({
                         send_to: prob.target.value,
                         valid_to: prob.target.value.split(" "),
@@ -116,7 +116,7 @@ class Draft extends BaseShow {
                   <textarea
                     className="DraftInput ContentInput BODY__ "
                     onChange={(prob) => {
-                      console.log(prob.target.value);
+                      //console.log(prob.target.value);
                       this.setState({ content: prob.target.value });
                     }}
                   >
@@ -127,7 +127,7 @@ class Draft extends BaseShow {
                   <div
                     className="BottomData"
                     onClick={() => {
-                      console.log("updated mail");
+                      //console.log("updated mail");
                       Setting.Update_mail(this.state.draft_id, 4);
                       Setting.draft_listener(null);
                     }}

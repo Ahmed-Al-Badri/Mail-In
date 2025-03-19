@@ -92,20 +92,20 @@ class Teps extends BaseShow {
           this.setState({ size: 40 });
         }
       }
-      console.log(window.innerWidth);
-      console.log("size");
+      //console.log(window.innerWidth);
+      //console.log("size");
     });
 
     if (window.innerWidth <= 900) {
       this.setState({ size: 80 });
     }
     // if (this.state.ref.current) {
-    //   console.log(this.state.ref);
     //   //console.log(this.state.ref);
+    //   ////console.log(this.state.ref);
     //   this.state.ref.current.addEventListener("scroll", (prob) => {
-    //     //console.log("log2");
-    //     //console.log(prob);
-    //     console.log(prob.target.scrollTop + " for first");
+    //     ////console.log("log2");
+    //     ////console.log(prob);
+    //     //console.log(prob.target.scrollTop + " for first");
     //     this.setState({ points: prob.target.scrollTop });
     //   });
     // }
@@ -115,18 +115,18 @@ class Teps extends BaseShow {
         this.setState(
           { mails: Setting.format_mails(this.href), data_load: true },
           () => {
-            //console.log(this.state.mails);
-            //console.log(this.href);
+            ////console.log(this.state.mails);
+            ////console.log(this.href);
           }
         );
-        console.log("Loaded");
+        //console.log("Loaded");
       };
       Setting.update_for = this.href;
       Setting.All_Mails();
     }
 
     //window.addEventListener("scroll", () => {
-    ////console.log("log");
+    //////console.log("log");
     //  this.setState({ points: window.scrollY });
     //});
   }
@@ -138,11 +138,11 @@ class Teps extends BaseShow {
         this.setState(
           { mails: Setting.format_mails(this.href), data_load: true },
           () => {
-            console.log(this.state.mails);
-            console.log(this.href);
+            //console.log(this.state.mails);
+            //console.log(this.href);
           }
         );
-        console.log("Loaded");
+        //console.log("Loaded");
       };
       Setting.update_for = this.href;
       Setting.All_Mails();
@@ -150,11 +150,11 @@ class Teps extends BaseShow {
 
     // if (this.state.ref.current) {
     //   this.state.ref.current.removeEventListener("scroll", (prob) => {
-    //     //console.log(b);
+    //     ////console.log(b);
     //     this.setState({ points: prob.target.scrollTop });
     //   });
     //   this.state.ref.current.addEventListener("scroll", (prob) => {
-    //     console.log(prob.target.scrollTop);
+    //     //console.log(prob.target.scrollTop);
     //     this.setState({ points: prob.target.scrollTop });
     //   });
     // }
@@ -202,9 +202,9 @@ class Teps extends BaseShow {
       let windows = this.state.points || 0;
       widths = this.state.ref.current.clientWidth;
       let top = this.state.ref.current.offsetTop;
-      //console.log(window.scrollY + " is the scroll while the top is " + top);
+      ////console.log(window.scrollY + " is the scroll while the top is " + top);
 
-      //console.log(screen + " is the screen size");
+      ////console.log(screen + " is the screen size");
       ////
       let points = windows - top;
       if (points < 0) {
@@ -215,9 +215,9 @@ class Teps extends BaseShow {
 
       let curs = points / this.state.size;
       curs = Math.floor(curs);
-      //console.log("the points " + points);
+      ////console.log("the points " + points);
 
-      //console.log(curs + " is the display location");
+      ////console.log(curs + " is the display location");
       for (
         let b = 0;
         b < display && b + curs - 2 < this.state.mails.length;
@@ -238,7 +238,7 @@ class Teps extends BaseShow {
       <>
         <div
           onLoad={() => {
-            console.log("AAAAAA");
+            //console.log("AAAAAA");
           }}
           key={this.state.mails.length}
           className="Info__"
@@ -264,8 +264,8 @@ class Teps extends BaseShow {
                         height: `${this.state.size}px`,
                       }}
                       onClick={() => {
-                        console.log(this.state.mails[res]);
-                        console.log("is the onclick mail");
+                        //console.log(this.state.mails[res]);
+                        //console.log("is the onclick mail");
                         if (this.state.mails[res].is_draft) {
                           Setting.draft_listener(this.state.mails[res].mail_id);
                         } else {
