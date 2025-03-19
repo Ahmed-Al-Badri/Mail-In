@@ -1,11 +1,48 @@
 @import "../../Style/Style.less";
 .Body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
 }
 
+//**
+
+.Base {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+body {
+  padding: 0;
+  margin: 0px;
+}
+
+.Body {
+  position: relative;
+  width: 100vw;
+  flex-grow: 1;
+}
+
+.DraftMail {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  width: auto;
+  background-color: rgba(0, 0, 255, 0.179);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.DraftMail:hover {
+  background-color: rgba(0, 0, 255, 0.304);
+}
+
+//** <--
+
 .Head {
-  background-color: rgb(70, 112, 125);
+  background-color: rgba(70, 112, 125, 0.225);
   height: 40px;
+  width: 100%;
 }
 
 .Side {
@@ -14,17 +51,18 @@
   margin: 5px;
   margin-left: 2px;
   margin-bottom: 2px;
-  background-color: transparent;
+  //background-color: transparent;
   border-right: 5px solid rgb(196, 196, 196);
-  border-top-right-radius: 20px;
+  //border-top-right-radius: 20px;
 }
 
 .BarShadow {
-  box-shadow: 2px 2px 2px grey;
+  //box-shadow: 2px 2px 2px grey;
 }
 
 .Bar {
   //.BarShadow;
+  position: relative;
   margin-top: 5px;
   margin-bottom: 5px;
   display: block;
@@ -33,27 +71,82 @@
   position: relative;
   background: @GivenBack;
   //borders
-  border-radius: 20px;
+  //border-radius: 20px;
   //border-right: 1px solid black;
 }
 
-.BarName {
-  position: absolute;
-  height: 90%;
-  top: 5%;
-  left: 10px;
-  width: 80%;
-  font-size: 1.5em;
+@first: rgb(119, 228, 255);
+@second: rgb(7, 0, 69);
+
+@read: white;
+@spam: rgb(255, 58, 212);
+@deleted: rgb(255, 0, 0);
+@unread: rgb(68, 68, 255);
+
+@hover: rgba(120, 120, 120, 0.373);
+@base: rgba(255, 255, 255, 0.755);
+
+.Read {
+  background-color: @hover;
 }
 
+.Unread {
+  background-color: @base;
+}
+
+.Barline {
+  position: absolute;
+  width: 1px;
+  height: 90%;
+  top: 5%;
+  right: 1px;
+  background-image: linear-gradient(@first, @second);
+}
+
+.Bar:hover .Barline {
+  background-image: linear-gradient(@second, @first);
+}
+
+.BarName {
+  left: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  position: relative;
+}
+.Amount__ {
+  padding: 5px;
+  font-family: "Arial Narrow Bold ";
+}
 .Bar:hover {
-  background: @fGivenBack;
-  color: @fTextColor;
+  background: rgba(0, 0, 0, 0.141);
+  //color: @fTextColor;
+}
+
+.Teps__ {
+  position: relative;
+  flex-grow: 1;
+
+  //overflow-y: auto;
+}
+
+.Info__ {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  //width: 100%;
+  //min-height: 4000px;
+  background-color: rgba(240, 248, 255, 0.216);
+}
+
+.Info2__ {
+  min-height: 4000px;
 }
 
 .Teps {
-  width: 100%;
-  background-color: white;
+  position: relative;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.414);
   border-radius: 10px;
   margin: 5px;
 }
@@ -61,7 +154,6 @@
 .Teps > div {
   display: block;
   width: 100%;
-  background-color: transparent;
 } //correct for now
 
 .Teps > div > div {
@@ -69,28 +161,45 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-color: transparent;
 } //this sets the mails content
 
 .MailShadow {
-  box-shadow: 2px 2px 1px grey;
+  box-shadow: 1px grey;
 }
 
 .Mails {
-  //.MailShadow;
+  .MailShadow;
   position: absolute;
   top: 5%;
   left: 1%;
   height: 90%;
   width: 98%;
-  background-color: aliceblue;
-  background-color: transparent;
+  //background-color: ;
+  //background-color: aliceblue;
+  //background-color: transparent;
   //border: 1px solid rgb(220, 220, 220);
 }
 
+.Title {
+}
+
+.Circle {
+  position: absolute;
+  //display: none;
+  width: 10px;
+  height: 10px;
+  top: calc(50% -5px);
+  left: 5px;
+  top: 5px;
+  //top: 0;
+  border-radius: 50%;
+  background-color: green;
+  display: inline-block;
+}
+
 .Mails:hover {
-  .MailShadow;
-  box-shadow: 2px 2px 1px rgb(91, 91, 91);
+  //.MailShadow;
+  //box-shadow: 2px 2px 1px rgb(237, 20, 20);
 }
 
 .Mails:not(:hover) .FunRuns {
@@ -109,6 +218,9 @@
   position: relative;
   width: 100%;
   height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .FunRuns {
@@ -116,15 +228,33 @@
   height: 0px;
 }
 
+.ICONS {
+  display: flex;
+  flex-direction: row;
+}
+
+.Mails {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.Elem {
+  position: relative;
+  height: 20%;
+  width: auto;
+  top: 40%;
+}
+
 .Elements {
   position: absolute;
-  width: 5%;
+  width: 4%;
   height: 90%;
-  border-radius: 30px;
+  //border-radius: 30px;
   overflow: hidden;
   top: 5%;
   border: 1px solid @fGivenBack;
   background-color: @GivenBack;
+  cursor: pointer;
 }
 
 .Elements:not(:active):hover {
@@ -149,8 +279,7 @@
 }
 
 .Title {
-  position: absolute;
-  width: calc(100% - (145px * 2));
+  flex-flow: 1;
   height: auto;
   overflow: hidden;
   font-size: 0.9em;
@@ -174,10 +303,16 @@
 }
 
 .From {
-  .Title;
-  position: absolute;
   width: 125px;
-  left: 1%;
+}
+
+.BarContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.BarName {
+  flex-grow: 1;
 }
 
 .Mails:hover .From,
@@ -187,7 +322,7 @@
 }
 
 .Mails:hover .Date {
-  display: none;
+  //  display: none;
 }
 
 .Date {
@@ -195,6 +330,11 @@
   left: unset;
   //right: 1%;
   right: 1%;
+  width: auto;
+}
+
+:not(.Smaller) .Title {
+  flex-grow: 1;
 }
 
 .has_been {
@@ -214,10 +354,49 @@
 
 .BottomLine {
   position: absolute;
-  width: 95%;
+  width: 90%;
+  height: 2px;
+  left: 5%;
+  background-image: linear-gradient(to right, @first, @second);
+  bottom: 0;
+  //border-bottom: 1px solid rgba(137, 137, 137, 0.564);
+}
+
+.Mails:hover .BottomLine {
+  background-image: linear-gradient(to right, @second, @first);
+}
+
+.Mails:hover {
+  background-color: @hover;
+}
+
+.Mails {
+}
+
+.Smaller .From {
+  top: unset;
+  bottom: 50%;
+}
+
+.Smaller .Date {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  bottom: 10px;
+}
+
+.Location {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  right: 10px;
+  height: calc(100% -20);
+  width: auto;
+}
+
+.ICON {
   height: 100%;
-  left: 2.5%;
-  border-bottom: 1px solid rgba(137, 137, 137, 0.564);
+  width: auto;
 }
 
 @media only screen and (min-width: 1800px) {

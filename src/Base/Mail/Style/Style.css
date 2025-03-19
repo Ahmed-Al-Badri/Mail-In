@@ -1,85 +1,48 @@
-.Info {
+.Info___ {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-}
-.MailDetails {
-  width: 100%;
-  margin: 5px;
-}
-.Topic_1 {
-  width: auto;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  font-size: 1.5em;
+  height: 100%;
   position: relative;
 }
+.MailDetails__ {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 .TopicString {
-  z-index: 2;
+  font-size: 1.5em;
+  padding-bottom: 10px;
 }
 .LayerDetails {
   padding-top: 10px;
-  position: relative;
-}
-.LayerDetails > .Border {
-  width: 90%;
-  left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 .Details_1 {
-  height: 50px;
-  width: 100%;
-  position: relative;
-}
-.Details_base {
-  position: absolute;
-  height: 90%;
-  top: 5%;
-  left: 1%;
-  font-size: 0.85em;
-}
-.From_1 {
-  position: absolute;
-  height: 90%;
-  top: 5%;
-  left: 1%;
-  font-size: 0.85em;
-  height: 45%;
-  width: 10%;
-}
-.SendTo {
-  position: absolute;
-  height: 90%;
-  top: 5%;
-  left: 1%;
-  font-size: 0.85em;
-  height: 45%;
-  width: 10%;
-  top: 50%;
+  font-size: 1em;
+  line-height: 1.5;
 }
 .MailContent {
+  flex-direction: column;
+  padding-top: 10px;
+  flex-grow: 1;
   position: relative;
-  padding: 10px;
-  padding-top: 20px;
 }
 .Content_1 {
-  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
   padding: 10px;
+  border-top: 1px solid rgba(117, 117, 117, 0.5);
+  white-space: pre-wrap;
 }
-.Block {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.Border {
-  position: absolute;
-  height: 100%;
-  width: 80%;
-  left: 10%;
-  border-bottom: 1px solid rgba(117, 117, 117, 0.455);
-}
-.SideBorder {
-  position: absolute;
-  height: 80%;
-  width: 100%;
-  top: 10%;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+.DateString {
+  font-style: italic;
+  color: gray;
+  margin-top: 10px;
 }
