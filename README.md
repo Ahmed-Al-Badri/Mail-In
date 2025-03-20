@@ -1,5 +1,12 @@
 # Mail-In Application
 
+## Deployed Sites
+
+1.  Main REPO for Fullstack class, [Link to Site] (https://mail-in.vercel.app/)
+    1.  https://mail-in.vercel.app/
+2.  Second REPO for Another Class, Chat Cord, [Link to Internetworking deployed site](https://chat-cord-ten.vercel.app/)
+    1.  https://chat-cord-ten.vercel.app/
+
 ## First Commit/Branch
 
 Overview: This branch controls the base setup of the Mailin Application. it mostly takes care of the Front-End layout. The layout consists of controling the
@@ -16,3 +23,20 @@ Overview: this branch focues on the creation of the Front-Web elements, that inc
 Video Review: [Video Link](https://pdx.zoom.us/rec/share/wLWDArIbcKKiGKiBdfRMTLZvMZPFSX6UzQRN2nJH_Vr04O59q7c_3jzCBRGLX7H-.pVa_rjWqchCzHUK4?startTime=1741047614000).
 
 Video Pull Request Review: [VIdeo Link](https://pdx.zoom.us/rec/share/jQfbVPyUwfgeSyYefUZgSJwumZVvg0MqaIfosfsp2-j3010tCZqj81oulKMVECdM.hu1CgQhuU5KCyH4O?startTime=1741132860000)
+
+## The server used for the repo
+
+Overview: What the server did was the most important part, as it controlled all
+the data.
+
+Link to the [Storage repo](https://github.com/Ahmed-Al-Badri/ServerData). Also
+the server repo is also in charge of handling CHATS, [Chats repo](git@github.com:Ahmed-Al-Badri/ChatCord.git)
+
+## Final Overview.
+
+Link to the video review [Final review](https://pdx.zoom.us/rec/share/_WFzD_Dc_5MmBc5mv_Xvha2QyZvBP8mwvnOZRMlm_rVRKq3EniQyoprkVMQsforx.1cTyeQCBVAornAXP?startTime=1742267791000)
+
+## Fast testing.
+
+    Use login of [password: aa, and username: aa] to login to a user with information to
+    test or just the site.
