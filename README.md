@@ -2,7 +2,7 @@
 
 ## Deployed Sites
 
-1.  Main REPO for Fullstack class, [Link to Site] (https://mail-in.vercel.app/)
+1.  Main REPO for Fullstack class, [Link to Site](https://mail-in.vercel.app/)
     1.  https://mail-in.vercel.app/
     2.  [repo link](https://github.com/Ahmed-Al-Badri/Mail-In)
 2.  Second REPO for Another Class, Chat Cord, [Link to Internetworking deployed site](https://chat-cord-ten.vercel.app/)
