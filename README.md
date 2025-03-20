@@ -3,13 +3,13 @@
 ## Deployed Sites
 
 1. Main REPO for Fullstack class, [Link to Site](https://mail-in.vercel.app/)
-    1. https://mail-in.vercel.app/
-    2. [repo link](https://github.com/Ahmed-Al-Badri/Mail-In)
+   1. https://mail-in.vercel.app/
+   2. [repo link](https://github.com/Ahmed-Al-Badri/Mail-In)
 2. Second REPO for Another Class, Chat Cord, [Link to Internetworking Deployed Site](https://chat-cord-ten.vercel.app/)
-    1. https://chat-cord-ten.vercel.app/
-    2. [repo link](https://github.com/Ahmed-Al-Badri/ChatCord)
+   1. https://chat-cord-ten.vercel.app/
+   2. [repo link](https://github.com/Ahmed-Al-Badri/ChatCord)
 3. The Server Repo
-    1. [Server repo link](https://github.com/Ahmed-Al-Badri/ServerData)
+   1. [Server repo link](https://github.com/Ahmed-Al-Badri/ServerData)
 
 ## First Commit/Branch
 
@@ -35,7 +35,7 @@ Link to the [Storage Repo](https://github.com/Ahmed-Al-Badri/ServerData). The se
 
 ## Final Overview
 
-Link to the video review [Final Review](https://pdx.zoom.us/rec/share/_WFzD_Dc_5MmBc5mv_Xvha2QyZvBP8mwvnOZRMlm_rVRKq3EniQyoprkVMQsforx.1cTyeQCBVAornAXP?startTime=1742267791000)
+Link to the video review [Final Review](https://pdx.zoom.us/rec/share/1MVm4_pi_SmDzmaOP7YC8XCKilAxIP5M33l40FsezrEYZp5Q3wvLoDCGAoq6gxZk.r86YlfoVK8dwvWnQ?startTime=1742267791000)
 
 ## Fast Testing
 
