@@ -4,8 +4,12 @@
 
 1.  Main REPO for Fullstack class, [Link to Site] (https://mail-in.vercel.app/)
     1.  https://mail-in.vercel.app/
+    2.  [repo link](https://github.com/Ahmed-Al-Badri/Mail-In)
 2.  Second REPO for Another Class, Chat Cord, [Link to Internetworking deployed site](https://chat-cord-ten.vercel.app/)
     1.  https://chat-cord-ten.vercel.app/
+    2.  [repo link](https://github.com/Ahmed-Al-Badri/ChatCord)
+3.  The Server repo
+    1.  [Server repo link](https://github.com/Ahmed-Al-Badri/ServerData)
 
 ## First Commit/Branch
 
@@ -32,7 +36,7 @@ the data.
 Link to the [Storage repo](https://github.com/Ahmed-Al-Badri/ServerData). Also
 the server repo is also in charge of handling CHATS, [Chats repo](git@github.com:Ahmed-Al-Badri/ChatCord.git)
 
-## Final Overview.
+## Final Overview
 
 Link to the video review [Final review](https://pdx.zoom.us/rec/share/_WFzD_Dc_5MmBc5mv_Xvha2QyZvBP8mwvnOZRMlm_rVRKq3EniQyoprkVMQsforx.1cTyeQCBVAornAXP?startTime=1742267791000)
 
