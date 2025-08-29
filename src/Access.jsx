@@ -15,6 +15,7 @@ class Access extends Component {
     Setting.login = (prob) => {
       this.setState({ login: prob });
     };
+    Setting.reconnectWebSocket();
   }
 
   render() {

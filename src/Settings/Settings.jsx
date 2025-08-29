@@ -14,6 +14,7 @@ let SERVER = {
   style: sessionStorage.getItem("ws") || "ws", // Added default to ws
   address: sessionStorage.getItem("address") || "",
   port: sessionStorage.getItem("port") || "8081", // Default port
+  type: sessionStorage.getItem("type") || 1,
 };
 
 class Settings {
@@ -46,6 +47,7 @@ class Settings {
     sessionStorage.setItem("ws", prob.style);
     sessionStorage.setItem("address", prob.address);
     sessionStorage.setItem("port", prob.port);
+    sessionStorage.setItem("type", prob.type);
     SERVER = prob;
     this.reconnectWebSocket();
   }
@@ -84,7 +86,11 @@ class Settings {
       this.WebS.close(); // Close existing connection if any
     }
 
-    this.WebS = new WebSocket(`${prob.style}://${prob.address}:${prob.port}`);
+    if (prob.type == 2) {
+      this.WebS = new WebSocket(`${prob.style}://${prob.address}`);
+    } else
+      this.WebS = new WebSocket(`${prob.style}://${prob.address}:${prob.port}`);
+
     this.WebS.onopen = () => {
       this.server(true);
       ////console.log("WebSocket connection established.");

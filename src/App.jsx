@@ -1,3 +1,8 @@
+sessionStorage.setItem("ws", "wss");
+sessionStorage.setItem("address", "tempect.com/ws/");
+sessionStorage.setItem("port", "");
+sessionStorage.setItem("type", "2");
+
 import Base from "./Base/Base";
 import Navigate from "./Format/Navigation/Navigation";
 import Setting from "./Settings/Settings";

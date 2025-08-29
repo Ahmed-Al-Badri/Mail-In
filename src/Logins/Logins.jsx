@@ -1,15 +1,14 @@
 import { Component } from "react";
 import Setting from "../Settings/Settings";
 import "./Logins.css";
-import { BaseShow } from "../Format/Format";
 
-class Server extends BaseShow {
+class Server extends Component {
   constructor(probs) {
     super(probs);
-    this.state = { ...this.state, Option: 1 };
+    this.state = { Option: 1 };
   }
 
-  active__(type) {
+  active(type) {
     return type === this.state.Option ? "Active" : "";
   }
 
@@ -23,12 +22,13 @@ class Server extends BaseShow {
           : this.option_three || "",
       address: this.address || "",
       port: this.port || "",
+      type: this.state.Option,
     });
-    console.log("The Address is " + this.address);
+    //console.log("The Address is " + this.address);
   }
 
-  do_render() {
-    let data = (
+  render() {
+    return (
       <div className="Login">
         <div>
           Login to server
@@ -44,7 +44,7 @@ class Server extends BaseShow {
           Server details
           <div className="Options">
             <div
-              className={`Option ${this.active__(1)}`}
+              className={`Option ${this.active(1)}`}
               onClick={() => {
                 this.setState({ Option: 1 });
               }}
@@ -52,7 +52,7 @@ class Server extends BaseShow {
               WS
             </div>
             <div
-              className={`Option ${this.active__(2)}`}
+              className={`Option ${this.active(2)}`}
               onClick={() => {
                 this.setState({ Option: 2 });
               }}
@@ -60,7 +60,7 @@ class Server extends BaseShow {
               WSS
             </div>
             <div
-              className={`Option ${this.active__(3)}`}
+              className={`Option ${this.active(3)}`}
               onClick={() => {
                 this.setState({ Option: 3 });
               }}
@@ -90,16 +90,22 @@ class Server extends BaseShow {
               }}
             />
           </div>
-          <div className="Data">
-            <div>Port</div>{" "}
-            <input
-              className="Get"
-              type="text"
-              onChange={(prob) => {
-                this.port = prob.target.value;
-              }}
-            />
-          </div>
+          {this.state.Option != 2 ? (
+            <>
+              <div className="Data">
+                <div>Port</div>{" "}
+                <input
+                  className="Get"
+                  type="text"
+                  onChange={(prob) => {
+                    this.port = prob.target.value;
+                  }}
+                />
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
 
         <div className="Options">
@@ -114,16 +120,13 @@ class Server extends BaseShow {
         </div>
       </div>
     );
-
-    return [data, "server__", {}];
   }
 }
 
-class Login extends BaseShow {
+class Login extends Component {
   constructor(prob) {
     super(prob);
     this.state = {
-      ...this.state,
       option: "login", // Determines if 'login' or 'create'
       email: "",
       username: "",
@@ -132,18 +135,20 @@ class Login extends BaseShow {
     };
   }
 
-  active__(type) {
+  active(type) {
     return type === this.state.option ? "Active" : "";
   }
 
   submit() {
     if (this.state.option === "create") {
-      // console.log(
-      //   "Creating account with:",
-      //   this.state.email,
-      //   this.state.username,
-      //   this.state.password
-      // );
+      /*
+      //console.log(
+        "Creating account with:",
+        this.state.email,
+        this.state.username,
+        this.state.password
+      );
+      */
       if (
         this.state.username != "" &&
         this.state.name != "" &&
@@ -168,19 +173,19 @@ class Login extends BaseShow {
     }
   }
 
-  do_render() {
-    let data = (
+  render() {
+    return (
       <div className="Login">
         <div>Login or Create Account</div>
         <div className="Options">
           <div
-            className={`Option ${this.active__("login")}`}
+            className={`Option ${this.active("login")}`}
             onClick={() => this.setState({ option: "login" })}
           >
             Login
           </div>
           <div
-            className={`Option ${this.active__("create")}`}
+            className={`Option ${this.active("create")}`}
             onClick={() => this.setState({ option: "create" })}
           >
             Create
@@ -257,8 +262,6 @@ class Login extends BaseShow {
         </div>
       </div>
     );
-
-    return [data, "login__", {}];
   }
 }
 
