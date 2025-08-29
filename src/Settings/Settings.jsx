@@ -11,10 +11,10 @@ let CREATS = {
 };
 
 let SERVER = {
-  style: sessionStorage.getItem("ws") || "ws", // Added default to ws
-  address: sessionStorage.getItem("address") || "",
-  port: sessionStorage.getItem("port") || "8081", // Default port
-  type: sessionStorage.getItem("type") || 1,
+  style: sessionStorage.getItem("ws") || "wss", // Added default to ws
+  address: sessionStorage.getItem("address") || "tempect.com/ws/",
+  port: sessionStorage.getItem("port") || "", // Default port
+  type: sessionStorage.getItem("type") || "2",
 };
 
 class Settings {
